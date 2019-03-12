@@ -1,0 +1,122 @@
+﻿BODY
+{
+  font-family:verdana,arial,helvetica;
+  font-size:12pt;
+  line-height:20pt;
+  margin:8px;
+}
+
+P.DocTitle {
+  font-family:verdana,arial,helvetica;
+  font-size:18pt;
+  line-height:28pt;
+  text-align:center;
+	margin:4;
+}
+
+PRE
+{
+	font-family:verdana,arial,helvetica;
+  font-size:10pt;
+  line-height:12pt;
+	margin-left:20px;
+  padding:8px 8px;
+  background-color:#EEE;
+}
+
+TABLE.ThinBorder TD {
+  border-width:1px;
+  border-color:black;
+  border-style:solid;
+}
+
+TABLE.clsStd TH {
+  font: bold 90% verdana,arial,helvetica,sans-serif;
+	text-align:left; vertical-align:top;
+	background-color:#DDD;
+	padding:2px 8px;
+}
+
+TABLE.clsStd TD {
+  font: bold 80% verdana,arial,helvetica,sans-serif;
+	vertical-align:top;
+	background-color:#EEE;
+	padding:2px 8px;
+}
+
+TABLE.clsStd1 TH {
+  font: bold 90% verdana,arial,helvetica,sans-serif;
+	text-align:left; vertical-align:top;
+	background-color:#DDD;
+	padding:2px 8px;
+}
+
+TABLE.clsStd1 TD {
+  font: bold 80% verdana,arial,helvetica,sans-serif;
+	vertical-align:middle;
+	background-color:#EEE;
+	padding:2px 8px;
+}
+
+TABLE.xmlStd TD {
+  font: 100% verdana,arial,helvetica,sans-serif;
+	vertical-align:top;
+	background-color:#EEE;
+	padding:2px 8px;
+}
+
+.Descript {
+  font: 100% times;
+	vertical-align:top;
+	padding:2px;
+}
+
+.BoldDescript {
+  font: bold 100% times
+	vertical-align:top;
+	padding:2px;
+}
+
+.SqlCommand {
+  font: 80% verdana,arial
+	vertical-align:top;
+	padding:2px;
+}
+
+.Title {
+  font: bold 120% verdana,arial,helvetica,sans-serif;
+	vertical-align:top;
+	padding:2px;
+}
+
+.GreenLargeTitle
+{
+  font: bold 150% verdana,arial,helvetica,sans-serif;
+	vertical-align:top;
+	color:#339933;
+}
+
+.GreenTitle
+{
+  font: bold 130% verdana,arial,helvetica,sans-serif;
+	vertical-align:top;
+	color:#339933;
+}
+
+.varname
+{
+  font: italic 90%; 
+  color:#3333FF;
+}
+
+.valuename
+{
+  font: italic 90%; 
+  color:#33AA33;
+}
+
+.comment
+{
+  font: italic 90%; 
+  color:#AAAAAA;
+}
