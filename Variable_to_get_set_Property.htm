@@ -1,0 +1,228 @@
+﻿<html>
+<script>
+var v_ArrayLib = {};
+   /*void*/v_ArrayLib.RemoveAt=function(vArray,vIndex)
+   {
+      vArray.splice(vIndex,1);
+      //return vArray;
+   };
+</script>
+<script>
+var v_StrLib = {};
+   v_StrLib.SpaceStr=function(vCount)
+   {
+      var c=' ';
+      return c.repeat(vCount);
+   };
+   v_StrLib.SplitByChar=function(vStr,vChar)
+   {
+      if (typeof vStr==='string')
+      {
+         return vStr.split(vChar);
+      }
+      else
+      {
+         return [];
+      }
+   };
+   v_StrLib.SplitByWhiteSpace=function(vStr)
+   {
+      if (typeof vStr==='string')
+      {
+         var a=vStr.split(/\s+/);
+         if (a[0]==='')
+         {
+            a.splice(0,1);
+         }
+         if (a[a.length-1]==='')
+         {
+            a.splice(a.length-1,1);
+         }
+         return a;
+      }
+      else
+      {
+         return [];
+      }
+   };
+   v_StrLib.SplitByCRLF=function(vStr)
+   {
+      if (typeof vStr==='string')
+      {
+         return vStr.split(/\r?\n/);
+      }
+      else
+      {
+         return [];
+      }
+   };
+   v_StrLib.Left=function(vStr,vCount)
+   {
+      var s=""+vStr; // 強迫轉換為字串
+      return s.substr(0,vCount);
+   };
+   v_StrLib.Mid=function(s, vFirst, vCountOpt)
+   {
+      if (vFirst < 0) vFirst = 0;
+      var vCount;
+      if (typeof vCountOpt==='undefined')
+      {
+         vCount = s.length - vFirst;
+      }
+      else
+      {
+         vCount=vCountOpt;
+      }
+      if (vCount < 0) vCount = 0;
+      if (vFirst + vCount > s.length) vCount = s.length - vFirst;
+      if (vFirst > s.length) vCount = 0;
+      if (vCount == 0) return '';
+      if ((vFirst == 0) && ((vFirst + vCount) == s.length)) return s;
+      return s.substr(vFirst, vCount);
+   };
+   v_StrLib.TrimRight=function(vStr,vTarget)
+   {
+      if (typeof vStr==='string')
+      {
+         if (vTarget)
+         {
+            return vStr.replace(new RegExp('\\'+vTarget+'$', 'g'), '');
+         }
+         else
+         {
+            return vStr.replace(/\s+$/, '');
+         }
+      }
+      else
+      {
+         return '';
+      }
+   };
+   v_StrLib.TrimAll=function(vStr,vTarget)
+   {
+      if (typeof vStr==='string')
+      {
+         if (vTarget)
+         {
+            return vStr.replace(new RegExp('^\\'+vTarget+'|\\'+vTarget+'$', 'g'), '');
+         }
+         else
+         {
+            return vStr.replace(/^\s+|\s+$/g, '');
+         }
+      }
+      else
+      {
+         return '';
+      }
+   };
+</script>
+<body>
+<h1>Convert Variable Declaration to C# get &amp; set Properties</h1>
+Private Variable Declaration
+<br>
+<textarea style="width: 1200px; height: 300px;" id="m_SrcEdit">
+private byte m_bFlag=0;             // 1 : 寫入 Session, 2 : 是否寫入 Cookie, 4 : 是否寫入 Candey
+private byte m_bScope=0;            // 1 : 主表單後寫入, 2 : 查詢表單後寫入, 4 : 編修表單後寫入
+private string m_sName="";          // 要寫入的 ID
+private string m_sValue="";         // 要寫入的值
+private string m_sCondition="";     // 要寫入的條件
+</textarea>
+<br>
+<input type="button" value="Convert" style="margin: 16px; padding: 8px;" onclick="javascript:DoConvert()">
+<br>
+Property of get & set
+<br>
+<textarea style="width: 1200px; height: 300px;" id="m_TarEdit"></textarea>
+<br>
+<span id="MsgSpan"></span>
+<script>
+function RemoveLineCommet(sLine)
+{
+   var p2 = sLine.indexOf("//");
+   if (p2 != -1)
+   {
+      var sLeft = v_StrLib.Left(sLine, p2);
+      var sRight = v_StrLib.Mid(sLine, p2 + 2);
+      return v_StrLib.TrimRight(sLeft);
+   }
+   else
+   {
+      return v_StrLib.TrimRight(sLine);
+   }
+}
+function DoConvert()
+{
+   var sSrcText=m_SrcEdit.value;
+   var saCRLF=v_StrLib.SplitByCRLF(sSrcText);
+   var i,sLine,sTest;
+   for (i = saCRLF.length - 1; i >= 0; i--)
+   {
+      sLine = saCRLF[i];
+      sLine=RemoveLineCommet(sLine);
+      sTest = v_StrLib.TrimAll(sLine);
+      if (sTest.length==0)
+      {
+         v_ArrayLib.RemoveAt(saCRLF,i);
+      }
+      else
+      {
+         saCRLF[i] = sLine;
+      }
+   }
+   var TempArray=[];
+   var nMaxTypeLen=0;
+   var nMaxVarLen=0;
+   //for (i = saCRLF.length - 1; i >= 0; i--)
+   for (i=0;i<saCRLF.length;i++)
+   {
+      sLine = saCRLF[i];
+      var saWhite=v_StrLib.SplitByWhiteSpace(sLine);
+      sTest=saWhite[0];
+      if ((sTest=='public')||(sTest=='internal')||(sTest=='private'))
+      {
+         v_ArrayLib.RemoveAt(saWhite,0);
+      }
+      sTest=saWhite[0];
+      if (sTest=='static')
+      {
+         v_ArrayLib.RemoveAt(saWhite,0);
+      }
+      var sTypeName=saWhite[0];
+      var sa=v_StrLib.SplitByChar(saWhite[1],'=');
+      var sVarName=sa[0];
+      var TempObj={};
+      TempObj['type']=sTypeName;
+      TempObj['name']=sVarName;
+      TempArray.push(TempObj);
+      nMaxTypeLen=Math.max(nMaxTypeLen,sTypeName.length);
+      nMaxVarLen=Math.max(nMaxVarLen,sVarName.length);
+   }
+   var sOutput="";
+   for (i=0;i<TempArray.length;i++)
+   {
+      sLine="";
+      TempObj=TempArray[i];
+      var sTypeName=TempObj['type'];
+      var sVarName=TempObj['name'];
+      var sa=v_StrLib.SplitByChar(sVarName,'_');
+      sLine=v_StrLib.SpaceStr(3)+"internal ";
+      s=sTypeName+v_StrLib.SpaceStr(32);
+      s=v_StrLib.Left(s,nMaxTypeLen);
+      sLine+=s+" ";
+      s=sa[1]+v_StrLib.SpaceStr(32);
+      var sVarSpace2=v_StrLib.Left(s,nMaxVarLen);
+      sLine+=sVarSpace2+" { get { return ";
+    //---------------------------------------------
+      var s=sVarName+v_StrLib.SpaceStr(32);
+      var sVarSpace1=v_StrLib.Left(s,nMaxVarLen);
+      sLine+=sVarSpace1+"; }   ";
+    //---------------------------------------------
+      sLine+="set { "+sVarSpace1+"=value; }}";
+      sOutput+=sLine+"\r\n";
+   }
+   m_TarEdit.value=sOutput;
+}
+</script>
+</body>
+</html>
