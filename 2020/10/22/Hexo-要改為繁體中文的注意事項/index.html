@@ -20,15 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="Hexo 要改為繁體中文 Google 裡的文章很多人都說將 _config.yml 中 language 改為 zh-tw 即可 但是正確的改法, 應該是 zh-TW 才對. 因為 themes\next\languages 目錄下的檔名是 zh-TW.yml 大小寫搞錯, hexo 會去用阿拉伯文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 要改為繁體中文的注意事項">
+<meta property="og:url" content="http://example.com/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Hexo 要改為繁體中文 Google 裡的文章很多人都說將 _config.yml 中 language 改為 zh-tw 即可 但是正確的改法, 應該是 zh-TW 才對. 因為 themes\next\languages 目錄下的檔名是 zh-TW.yml 大小寫搞錯, hexo 會去用阿拉伯文">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-10-22T12:12:45.000Z">
+<meta property="article:modified_time" content="2020-10-22T12:16:38.318Z">
 <meta property="article:author" content="Einstand Chen">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
 
 
 <script id="page-configurations">
@@ -36,12 +40,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>歸檔 | Hexo</title>
+  <title>Hexo 要改為繁體中文的注意事項 | Hexo</title>
   
 
 
@@ -139,90 +143,81 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共有 3 篇文章。 繼續努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Einstand Chen">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo 要改為繁體中文的注意事項
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2020-10-22 20:12:45 / 修改時間：20:16:38" itemprop="dateCreated datePublished" datetime="2020-10-22T20:12:45+08:00">2020-10-22</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-22T20:12:45+08:00"
-              content="2020-10-22">
-          10-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" itemprop="url">
-            <span itemprop="name">Hexo 要改為繁體中文的注意事項</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-22T19:09:23+08:00"
-              content="2020-10-22">
-          10-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/22/%E6%8E%92%E9%99%A4%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%90%9C%E5%B0%8B/" itemprop="url">
-            <span itemprop="name">排除簡體中文的搜尋</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-22T14:25:08+08:00"
-              content="2020-10-22">
-          10-22
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/10/22/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>Hexo 要改為繁體中文</p>
+<p>Google 裡的文章很多人都說將 _config.yml 中 language 改為 zh-tw 即可</p>
+<p>但是正確的改法, 應該是 zh-TW 才對.</p>
+<p>因為 themes\next\languages 目錄下的檔名是 zh-TW.yml</p>
+<p>大小寫搞錯, hexo 會去用阿拉伯文</p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/22/%E6%8E%92%E9%99%A4%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%90%9C%E5%B0%8B/" rel="prev" title="排除簡體中文的搜尋">
+      <i class="fa fa-chevron-left"></i> 排除簡體中文的搜尋
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
