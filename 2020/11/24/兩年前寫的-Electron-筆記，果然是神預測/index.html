@@ -20,28 +20,32 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="因為 .NET Core 3.0 的 WinForm 只支援 Windows 平台, MacOS 和 Linux 都不能用. 所以要找另外的方式來解決誇平能的問題. 因為 Visual Studio Code 是用 Electron 寫的, 因此想試試 Electron 是不是可以和 .NET Core 結合運作. 首先是找到 edge.js, 但它只支援純 Node.js 在 Electron.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="兩年前寫的 Electron 筆記，果然是神預測">
+<meta property="og:url" content="http://example.com/2020/11/24/%E5%85%A9%E5%B9%B4%E5%89%8D%E5%AF%AB%E7%9A%84-Electron-%E7%AD%86%E8%A8%98%EF%BC%8C%E6%9E%9C%E7%84%B6%E6%98%AF%E7%A5%9E%E9%A0%90%E6%B8%AC/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="因為 .NET Core 3.0 的 WinForm 只支援 Windows 平台, MacOS 和 Linux 都不能用. 所以要找另外的方式來解決誇平能的問題. 因為 Visual Studio Code 是用 Electron 寫的, 因此想試試 Electron 是不是可以和 .NET Core 結合運作. 首先是找到 edge.js, 但它只支援純 Node.js 在 Electron.">
 <meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2020-11-24T02:44:28.000Z">
+<meta property="article:modified_time" content="2020-11-24T02:48:14.594Z">
 <meta property="article:author" content="Einstand Chen">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2020/11/24/%E5%85%A9%E5%B9%B4%E5%89%8D%E5%AF%AB%E7%9A%84-Electron-%E7%AD%86%E8%A8%98%EF%BC%8C%E6%9E%9C%E7%84%B6%E6%98%AF%E7%A5%9E%E9%A0%90%E6%B8%AC/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-TW'
   };
 </script>
 
-  <title>Hexo</title>
+  <title>兩年前寫的 Electron 筆記，果然是神預測 | Hexo</title>
   
 
 
@@ -139,9 +143,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
@@ -157,10 +162,9 @@
       <meta itemprop="name" content="Hexo">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/11/24/%E5%85%A9%E5%B9%B4%E5%89%8D%E5%AF%AB%E7%9A%84-Electron-%E7%AD%86%E8%A8%98%EF%BC%8C%E6%9E%9C%E7%84%B6%E6%98%AF%E7%A5%9E%E9%A0%90%E6%B8%AC/" class="post-title-link" itemprop="url">兩年前寫的 Electron 筆記，果然是神預測</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          兩年前寫的 Electron 筆記，果然是神預測
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -184,7 +188,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>因為 .NET Core 3.0 的 WinForm 只支援 Windows 平台, MacOS 和 Linux 都不能用.</p>
+        <p>因為 .NET Core 3.0 的 WinForm 只支援 Windows 平台, MacOS 和 Linux 都不能用.</p>
 <p>所以要找另外的方式來解決誇平能的問題. 因為 Visual Studio Code 是用 Electron 寫的, 因此想試試 Electron 是不是可以和 .NET Core 結合運作.</p>
 <p>首先是找到 edge.js, 但它只支援純 Node.js 在 Electron.js 上不能使用</p>
 <p>後來, 有個韓國人 kexplo 寫了一個 electron-edge 當年應該是可以用, 但它只支援到 Node 6.5.0 和 7.4.0 但是現在的 Node 已經是 10.15.3 了, 該作者已經兩年多沒更新, 應該是死案了.</p>
@@ -192,213 +196,30 @@
 <p>後來又找到一個德國人在 2017 年寫的 Electron.NET, 這個最接近完成體, 它在 Windows 和 MacOS 都能 Build 也都能執行, 但在 MacOS 是空白的畫面. 應該是近年 MacOS 更新時加強了安全性, 才造成 Mac 執行錯誤. 但 Anyway 作者不想改了.</p>
 <p>研究了一下 Electron.js 看看它有沒有自己支援 .NET Core 的計劃, 發現 Electron.js 的作者 zcbenz 是中國人, 而且他已經離開 Electron 專案, 另創 Yue 專案, 也就是說 Electron 也不會有什麼大更新了.</p>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Einstand Chen">
-      <meta itemprop="description" content="">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" class="post-title-link" itemprop="url">Hexo 要改為繁體中文的注意事項</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2020-10-22 20:12:45 / 修改時間：20:16:38" itemprop="dateCreated datePublished" datetime="2020-10-22T20:12:45+08:00">2020-10-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Hexo 要改為繁體中文</p>
-<p>Google 裡的文章很多人都說將 _config.yml 中 language 改為 zh-tw 即可</p>
-<p>但是正確的改法, 應該是 zh-TW 才對.</p>
-<p>因為 themes\next\languages 目錄下的檔名是 zh-TW.yml</p>
-<p>大小寫搞錯, hexo 會去用阿拉伯文</p>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/22/Hexo-%E8%A6%81%E6%94%B9%E7%82%BA%E7%B9%81%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85/" rel="prev" title="Hexo 要改為繁體中文的注意事項">
+      <i class="fa fa-chevron-left"></i> Hexo 要改為繁體中文的注意事項
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/%E6%8E%92%E9%99%A4%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%90%9C%E5%B0%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Einstand Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/22/%E6%8E%92%E9%99%A4%E7%B0%A1%E9%AB%94%E4%B8%AD%E6%96%87%E7%9A%84%E6%90%9C%E5%B0%8B/" class="post-title-link" itemprop="url">排除簡體中文的搜尋</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
-
-              <time title="創建時間：2020-10-22 19:09:23 / 修改時間：19:31:23" itemprop="dateCreated datePublished" datetime="2020-10-22T19:09:23+08:00">2020-10-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>More info: <a href="/GoogleZhTW.htm">排除簡體中文的搜尋</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Einstand Chen">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/10/22/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-
-              <time title="創建時間：2020-10-22 14:25:08" itemprop="dateCreated datePublished" datetime="2020-10-22T14:25:08+08:00">2020-10-22</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
